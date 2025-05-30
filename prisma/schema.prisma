@@ -43,14 +43,6 @@ model Session {
   expiresAt DateTime
 }
 
-model ServerMetric {
-  id        Int      @id @default(autoincrement())
-  cpuUsage  Float
-  ramUsage  Float
-  diskUsage Float
-  timestamp DateTime @default(now())
-}
-
 model AuditLog {
   id        Int      @id @default(autoincrement())
   userId    Int
