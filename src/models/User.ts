@@ -65,22 +65,6 @@ export class User {
     }
   }
 
-  public isModerator(): boolean {
-    return [UserRole.Moderator, UserRole.Admin, UserRole.SuperAdmin, UserRole.Owner].includes(this.role);
-  }
-
-  public isAdmin(): boolean {
-    return [UserRole.Admin, UserRole.SuperAdmin, UserRole.Owner].includes(this.role);
-  }
-
-  public isSuperAdmin(): boolean {
-    return [UserRole.SuperAdmin, UserRole.Owner].includes(this.role);
-  }
-
-  public isOwner(): boolean {
-    return [UserRole.Owner].includes(this.role);
-  }
-
   public updateStatus(newStatus: UserStatus): void {
     if (!Object.values(UserStatus).includes(newStatus)) {
       throw new Error("Invalid status");

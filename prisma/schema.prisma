@@ -49,5 +49,6 @@ model AuditLog {
   user      User     @relation(fields: [userId], references: [id])
   action    String
   details   String?
+  ipAddress String?
   timestamp DateTime @default(now())
 }
