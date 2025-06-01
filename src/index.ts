@@ -1,9 +1,11 @@
-import express from 'express'
+import { MainConfig } from "./config/MainConfig.js";
+import express from "express";
 
-const app = express()
+const config = new MainConfig();
+const app = express();
 
-app.get('/', (req, res) => {
-  res.send('Hello World')
-})
+console.log(config);
 
-app.listen(3000)
+app.listen(config.server.port, () => {
+  console.log(`Server running on port ${config.server.port}`);
+}); 
